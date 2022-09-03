@@ -35,11 +35,12 @@ jobs:
           --memory 4096 \
           --disk /storage/disk.qcow2 \
           --name debpreseed
-           
+
   clear-tmps:
     runs-on: self-hosted
+    needs: build-iso
     steps:
     - name: "Clear downloaded repo dir"
-      run: sudo r, -rf ./repo
+      run: sudo rm -rf ./repo
     - name: "Clear .tpm* in /tmp"
       run: sudo rm -rf /tmp/.tmp*
