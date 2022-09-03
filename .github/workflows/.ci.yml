@@ -20,8 +20,10 @@ jobs:
     # The type of runner that the job will run on
     runs-on: self-hosted
     steps:
+    - name: "Get repo"
+      run: git clone https://github.com/KeDRome/debpreseed.git repo
     - name: "Make iso with script"
-      run: pwd && sh /home/kde/debpreseed/debpreseed/makeiso.sh
+      run: sudo sh ./repo/makeiso.sh
   run-vm:
     runs-on: self-hosted
     steps:
