@@ -2,9 +2,9 @@
 
 #
 # Укажите ниже пути к:
-PRESEED_FILE=$1
-INPUT_ISO=$2
-OUTPUT_ISO=$3
+PRESEED_FILE=./preseed.cfg #$1
+INPUT_ISO=/storage/iso/debian11.iso #$2
+OUTPUT_ISO=/storage/iso/auto_debian11.iso #$3
 
 echo "preseed.cfg IS: $PRESEED_FILE"
 echo "input iso   IS: $INPUT_ISO"

@@ -18,17 +18,17 @@ jobs:
   # This workflow contains a single job called "build"
   build-iso:
     # The type of runner that the job will run on
-    runs-on: self-runner
+    runs-on: self-hosted
     steps:
     - name: "Make iso with script"
       run: ./makeiso.sh
   run-vm:
-    runs-on: self-runner
+    runs-on: self-hosted
     steps:
     - name: "Run installation with virt-install"
       run: sudo virt-install --cdrom /storage/iso/auto_debian11.iso  
   clear-tmps:
-    runs-on: self-runner
+    runs-on: self-hosted
     steps:
     - name: "Clear .tpm* in /tmp"
       run: sudo rm -rf /tmp/.tmp*
