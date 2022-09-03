@@ -48,7 +48,7 @@ jobs:
 
   clear-vm: 
     runs-on: self-hosted
-    needs: manual
+    when: manual
     steps:
     - name: "Destroy and undefine testing VM"
       run: |
