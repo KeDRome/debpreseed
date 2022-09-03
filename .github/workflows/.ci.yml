@@ -26,11 +26,13 @@ jobs:
       run: sudo sh ./repo/makeiso.sh
   run-vm:
     runs-on: self-hosted
+    when: build-iso
     steps:
     - name: "Run installation with virt-install"
       run: sudo virt-install --cdrom /storage/iso/auto_debian11.iso  
   clear-tmps:
     runs-on: self-hosted
+    when: run-vm
     steps:
     - name: "Clear .tpm* in /tmp"
       run: sudo rm -rf /tmp/.tmp*
