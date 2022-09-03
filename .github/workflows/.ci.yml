@@ -29,10 +29,15 @@ jobs:
     needs: build-iso
     steps:
     - name: "Run installation with virt-install"
-      run: sudo virt-install --cdrom /storage/iso/auto_debian11.iso  
+      run: |
+        sudo virt-install \
+          --cdrom /storage/iso/auto_debian11.iso \
+          --memory 4096 \
+          --disk /storage/disk.qcow2 \
+          --name debpreseed
+           
   clear-tmps:
     runs-on: self-hosted
-    needs: run-vm
     steps:
     - name: "Clear downloaded repo dir"
       run: sudo r, -rf ./repo
