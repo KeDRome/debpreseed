@@ -34,7 +34,8 @@ jobs:
           --cdrom /storage/iso/auto_debian11.iso \
           --memory 4096 \
           --disk /storage/disk.qcow2 \
-          --name debpreseed
+          --name debpreseed \
+          --check path_in_use=off
 
   clear-tmps:
     runs-on: self-hosted
