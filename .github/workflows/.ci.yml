@@ -34,5 +34,7 @@ jobs:
     runs-on: self-hosted
     needs: run-vm
     steps:
+    - name: "Clear downloaded repo dir"
+      run: sudo r, -rf ./repo
     - name: "Clear .tpm* in /tmp"
       run: sudo rm -rf /tmp/.tmp*
