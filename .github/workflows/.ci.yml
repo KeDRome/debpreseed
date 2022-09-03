@@ -45,3 +45,12 @@ jobs:
       run: sudo rm -rf ./repo
     - name: "Clear .tpm* in /tmp"
       run: sudo rm -rf /tmp/.tmp*
+
+  clear-vm: 
+    runs-on: self-hosted
+    needs: manual
+    steps:
+    - name: "Destroy and undefine testing VM"
+      run: |
+        sudo virsh undefine --domain debpreseed \
+        sudo virsh destroy --domain debpreseed
