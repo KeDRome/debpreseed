@@ -48,7 +48,7 @@ jobs:
     - name: "Clear downloaded repo dir"
       run: sudo rm -rf ./repo
     - name: "Clear .tpm* in /tmp"
-      run: sudo rm -rf /tmp/.tmp*
+      run: sudo rm -rf /tmp/tmp*
 
   clear-vm: 
     runs-on: self-hosted
