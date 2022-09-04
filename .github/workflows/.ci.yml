@@ -41,7 +41,7 @@ jobs:
           --disk /storage/disk.qcow2 \
           --name debpreseed \
           --check path_in_use=off \
-          --os-variant debian
+          --os-variant debiantesting
   clear-tmps:
     runs-on: self-hosted
     needs: build-iso
