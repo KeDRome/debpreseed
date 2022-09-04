@@ -25,7 +25,7 @@ jobs:
     - name: "Make iso with script"
       run: |
         cd ./repo && \
-        RESEED_FILE=./preseed.cfg;  
+        PRESEED_FILE=./preseed.cfg;  
         INPUT_ISO=/storage/iso/debian11-dvd.iso;
         OUTPUT_ISO=/storage/iso/auto_debian11.iso;
         sudo sh ./makeiso.sh $PRESEED_FILE $INPUT_ISO $OUTPUT_ISO
