@@ -3,7 +3,7 @@
 #
 # Укажите ниже пути к:
 PRESEED_FILE=./preseed.cfg #$1
-INPUT_ISO=/storage/iso/debian11.iso #$2
+INPUT_ISO=/storage/iso/debian11-dvd.iso #$2
 OUTPUT_ISO=/storage/iso/auto_debian11.iso #$3
 
 echo "preseed.cfg IS: $PRESEED_FILE"
