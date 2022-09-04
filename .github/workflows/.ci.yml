@@ -40,8 +40,7 @@ jobs:
           --memory 4096 \
           --disk /storage/disk.qcow2 \
           --name debpreseed \
-          --check path_in_use=off \
-          --os-variant debiantesting
+          --check path_in_use=off 
   clear-tmps:
     runs-on: self-hosted
     needs: build-iso
