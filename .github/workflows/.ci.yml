@@ -52,5 +52,5 @@ jobs:
     steps:
     - name: "Destroy and undefine testing VM"
       run: |
-        sudo virsh undefine --domain debpreseed \
+        sudo virsh undefine --domain debpreseed && \
         sudo virsh destroy --domain debpreseed
