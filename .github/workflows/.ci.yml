@@ -23,7 +23,12 @@ jobs:
     - name: "Get repo"
       run: git clone https://github.com/KeDRome/debpreseed.git repo
     - name: "Make iso with script"
-      run: cd ./repo && sudo sh ./makeiso.sh
+      run: |
+        cd ./repo && \
+        RESEED_FILE=./preseed.cfg;  
+        INPUT_ISO=/storage/iso/debian11-dvd.iso;
+        OUTPUT_ISO=/storage/iso/auto_debian11.iso;
+        sudo sh ./makeiso.sh $PRESEED_FILE $INPUT_ISO $OUTPUT_ISO
   run-vm:
     runs-on: self-hosted
     needs: build-iso
@@ -35,8 +40,8 @@ jobs:
           --memory 4096 \
           --disk /storage/disk.qcow2 \
           --name debpreseed \
-          --check path_in_use=off
-
+          --check path_in_use=off \
+          --os-variant debian
   clear-tmps:
     runs-on: self-hosted
     needs: build-iso
